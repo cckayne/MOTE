@@ -1,0 +1,333 @@
+ BIRTHDAY SPACINGS TEST, M= 512 N=2**24 LAMBDA=  2.0000
+           MOTE16.32       using bits  1 to 24 p-value=  .591715
+           MOTE16.32       using bits  2 to 25 p-value=  .369763
+           MOTE16.32       using bits  3 to 26 p-value=  .930283
+           MOTE16.32       using bits  4 to 27 p-value=  .548632
+           MOTE16.32       using bits  5 to 28 p-value=  .287736
+           MOTE16.32       using bits  6 to 29 p-value=  .310471
+           MOTE16.32       using bits  7 to 30 p-value=  .935746
+           MOTE16.32       using bits  8 to 31 p-value=  .799736
+           MOTE16.32       using bits  9 to 32 p-value=  .466591
+   The 9 p-values were
+        .591715   .369763   .930283   .548632   .287736
+        .310471   .935746   .799736   .466591
+  A KSTEST for the 9 p-values yields  .487823
+--------------------------------------------------------------------------------
+           OPERM5 test for file MOTE16.32      
+ chisquare for 99 degrees of freedom=102.847; p-value= .624497
+           OPERM5 test for file MOTE16.32      
+ chisquare for 99 degrees of freedom=103.597; p-value= .643991
+--------------------------------------------------------------------------------
+    Binary rank test for MOTE16.32      
+         Rank test for 31x31 binary matrices:
+        rows from leftmost 31 bits of each 32-bit integer
+      rank   observed  expected (o-e)^2/e  sum
+        28       225     211.4   .872538     .873
+        29      5150    5134.0   .049800     .922
+        30     23111   23103.0   .002738     .925
+        31     11514   11551.5   .121896    1.047
+  chisquare= 1.047 for 3 d. of f.; p-value= .363215
+    Binary rank test for MOTE16.32      
+         Rank test for 32x32 binary matrices:
+        rows from leftmost 32 bits of each 32-bit integer
+      rank   observed  expected (o-e)^2/e  sum
+        29       222     211.4   .529654     .530
+        30      5182    5134.0   .448580     .978
+        31     23021   23103.0   .291377    1.270
+        32     11575   11551.5   .047708    1.317
+  chisquare= 1.317 for 3 d. of f.; p-value= .400513
+--------------------------------------------------------------------------------
+ b-rank test for bits  1 to  8 p=1-exp(-SUM/2)= .04526
+ b-rank test for bits  2 to  9 p=1-exp(-SUM/2)= .49914
+ b-rank test for bits  3 to 10 p=1-exp(-SUM/2)= .33737
+ b-rank test for bits  4 to 11 p=1-exp(-SUM/2)= .47649
+ b-rank test for bits  5 to 12 p=1-exp(-SUM/2)= .10756
+ b-rank test for bits  6 to 13 p=1-exp(-SUM/2)= .04330
+ b-rank test for bits  7 to 14 p=1-exp(-SUM/2)= .48119
+ b-rank test for bits  8 to 15 p=1-exp(-SUM/2)= .08292
+ b-rank test for bits  9 to 16 p=1-exp(-SUM/2)= .82301
+ b-rank test for bits 10 to 17 p=1-exp(-SUM/2)= .99889
+ b-rank test for bits 11 to 18 p=1-exp(-SUM/2)= .95485
+ b-rank test for bits 12 to 19 p=1-exp(-SUM/2)= .72411
+ b-rank test for bits 13 to 20 p=1-exp(-SUM/2)= .93023
+ b-rank test for bits 14 to 21 p=1-exp(-SUM/2)= .72161
+ b-rank test for bits 15 to 22 p=1-exp(-SUM/2)= .98664
+ b-rank test for bits 16 to 23 p=1-exp(-SUM/2)= .12880
+ b-rank test for bits 17 to 24 p=1-exp(-SUM/2)= .79825
+ b-rank test for bits 18 to 25 p=1-exp(-SUM/2)= .20332
+ b-rank test for bits 19 to 26 p=1-exp(-SUM/2)= .26024
+ b-rank test for bits 20 to 27 p=1-exp(-SUM/2)= .06539
+ b-rank test for bits 21 to 28 p=1-exp(-SUM/2)= .22587
+ b-rank test for bits 22 to 29 p=1-exp(-SUM/2)= .41101
+ b-rank test for bits 23 to 30 p=1-exp(-SUM/2)= .52795
+ b-rank test for bits 24 to 31 p=1-exp(-SUM/2)= .81934
+ b-rank test for bits 25 to 32 p=1-exp(-SUM/2)= .11339
+   TEST SUMMARY, 25 tests on 100,000 random 6x8 matrices
+ These should be 25 uniform [0,1] random variables:
+     .045263     .499139     .337374     .476493     .107555
+     .043297     .481187     .082923     .823007     .998885
+     .954853     .724106     .930233     .721608     .986643
+     .128796     .798253     .203317     .260235     .065392
+     .225874     .411011     .527953     .819339     .113391
+   brank test summary for MOTE16.32      
+       The KS test for those 25 supposed UNI's yields
+                    KS p-value= .646983
+--------------------------------------------------------------------------------
+  No. missing words should average  141909. with sigma=428.
+ tst no  1:  142262 missing words,     .82 sigmas from mean, p-value= .79503
+ tst no  2:  141792 missing words,    -.27 sigmas from mean, p-value= .39199
+ tst no  3:  141862 missing words,    -.11 sigmas from mean, p-value= .45597
+ tst no  4:  141503 missing words,    -.95 sigmas from mean, p-value= .17122
+ tst no  5:  142375 missing words,    1.09 sigmas from mean, p-value= .86171
+ tst no  6:  142107 missing words,     .46 sigmas from mean, p-value= .67791
+ tst no  7:  141880 missing words,    -.07 sigmas from mean, p-value= .47268
+ tst no  8:  141295 missing words,   -1.44 sigmas from mean, p-value= .07559
+ tst no  9:  142662 missing words,    1.76 sigmas from mean, p-value= .96068
+ tst no 10:  141740 missing words,    -.40 sigmas from mean, p-value= .34619
+ tst no 11:  141749 missing words,    -.37 sigmas from mean, p-value= .35398
+ tst no 12:  142272 missing words,     .85 sigmas from mean, p-value= .80160
+ tst no 13:  141360 missing words,   -1.28 sigmas from mean, p-value= .09966
+ tst no 14:  142434 missing words,    1.23 sigmas from mean, p-value= .88988
+ tst no 15:  141769 missing words,    -.33 sigmas from mean, p-value= .37151
+ tst no 16:  141961 missing words,     .12 sigmas from mean, p-value= .54805
+ tst no 17:  141316 missing words,   -1.39 sigmas from mean, p-value= .08283
+ tst no 18:  141204 missing words,   -1.65 sigmas from mean, p-value= .04968
+ tst no 19:  142081 missing words,     .40 sigmas from mean, p-value= .65583
+ tst no 20:  142090 missing words,     .42 sigmas from mean, p-value= .66354
+--------------------------------------------------------------------------------
+    OPSO for MOTE16.32       using bits 23 to 32        141763  -.505  .3069
+    OPSO for MOTE16.32       using bits 22 to 31        142182   .940  .8265
+    OPSO for MOTE16.32       using bits 21 to 30        141952   .147  .5585
+    OPSO for MOTE16.32       using bits 20 to 29        141867  -.146  .4420
+    OPSO for MOTE16.32       using bits 19 to 28        141700  -.722  .2352
+    OPSO for MOTE16.32       using bits 18 to 27        141545 -1.256  .1045
+    OPSO for MOTE16.32       using bits 17 to 26        141655  -.877  .1902
+    OPSO for MOTE16.32       using bits 16 to 25        142009   .344  .6345
+    OPSO for MOTE16.32       using bits 15 to 24        142064   .533  .7031
+    OPSO for MOTE16.32       using bits 14 to 23        142171   .902  .8166
+    OPSO for MOTE16.32       using bits 13 to 22        141513 -1.367  .0859
+    OPSO for MOTE16.32       using bits 12 to 21        141874  -.122  .4515
+    OPSO for MOTE16.32       using bits 11 to 20        141680  -.791  .2145
+    OPSO for MOTE16.32       using bits 10 to 19        141819  -.311  .3777
+    OPSO for MOTE16.32       using bits  9 to 18        142353  1.530  .9370
+    OPSO for MOTE16.32       using bits  8 to 17        141709  -.691  .2448
+    OPSO for MOTE16.32       using bits  7 to 16        141886  -.080  .4679
+    OPSO for MOTE16.32       using bits  6 to 15        141495 -1.429  .0765
+    OPSO for MOTE16.32       using bits  5 to 14        141929   .068  .5270
+    OPSO for MOTE16.32       using bits  4 to 13        141830  -.274  .3922
+    OPSO for MOTE16.32       using bits  3 to 12        141802  -.370  .3557
+    OPSO for MOTE16.32       using bits  2 to 11        142105   .675  .7501
+    OPSO for MOTE16.32       using bits  1 to 10        141880  -.101  .4597
+    OQSO for MOTE16.32       using bits 28 to 32        141849  -.205  .4190
+    OQSO for MOTE16.32       using bits 27 to 31        141952   .145  .5575
+    OQSO for MOTE16.32       using bits 26 to 30        141929   .067  .5266
+    OQSO for MOTE16.32       using bits 25 to 29        141375 -1.811  .0350
+    OQSO for MOTE16.32       using bits 24 to 28        141984   .253  .5999
+    OQSO for MOTE16.32       using bits 23 to 27        142378  1.589  .9439
+    OQSO for MOTE16.32       using bits 22 to 26        141447 -1.567  .0585
+    OQSO for MOTE16.32       using bits 21 to 25        142406  1.684  .9539
+    OQSO for MOTE16.32       using bits 20 to 24        141609 -1.018  .1543
+    OQSO for MOTE16.32       using bits 19 to 23        141648  -.886  .1878
+    OQSO for MOTE16.32       using bits 18 to 22        141819  -.306  .3797
+    OQSO for MOTE16.32       using bits 17 to 21        142007   .331  .6297
+    OQSO for MOTE16.32       using bits 16 to 20        141701  -.706  .2400
+    OQSO for MOTE16.32       using bits 15 to 19        141724  -.628  .2649
+    OQSO for MOTE16.32       using bits 14 to 18        142430  1.765  .9612
+    OQSO for MOTE16.32       using bits 13 to 17        142153   .826  .7956
+    OQSO for MOTE16.32       using bits 12 to 16        141655  -.862  .1943
+    OQSO for MOTE16.32       using bits 11 to 15        141304 -2.052  .0201
+    OQSO for MOTE16.32       using bits 10 to 14        141653  -.869  .1924
+    OQSO for MOTE16.32       using bits  9 to 13        142195   .968  .8336
+    OQSO for MOTE16.32       using bits  8 to 12        141947   .128  .5508
+    OQSO for MOTE16.32       using bits  7 to 11        141756  -.520  .3016
+    OQSO for MOTE16.32       using bits  6 to 10        141982   .246  .5973
+    OQSO for MOTE16.32       using bits  5 to  9        141592 -1.076  .1410
+    OQSO for MOTE16.32       using bits  4 to  8        141900  -.032  .4874
+    OQSO for MOTE16.32       using bits  3 to  7        142239  1.118  .8681
+    OQSO for MOTE16.32       using bits  2 to  6        142231  1.090  .8622
+    OQSO for MOTE16.32       using bits  1 to  5        142468  1.894  .9709
+     DNA for MOTE16.32       using bits 31 to 32        141739  -.502  .3077
+     DNA for MOTE16.32       using bits 30 to 31        141779  -.384  .3503
+     DNA for MOTE16.32       using bits 29 to 30        142205   .872  .8084
+     DNA for MOTE16.32       using bits 28 to 29        142478  1.677  .9533
+     DNA for MOTE16.32       using bits 27 to 28        142243   .984  .8375
+     DNA for MOTE16.32       using bits 26 to 27        141944   .102  .5407
+     DNA for MOTE16.32       using bits 25 to 26        141938   .085  .5337
+     DNA for MOTE16.32       using bits 24 to 25        142484  1.695  .9550
+     DNA for MOTE16.32       using bits 23 to 24        142481  1.686  .9541
+     DNA for MOTE16.32       using bits 22 to 23        142038   .380  .6479
+     DNA for MOTE16.32       using bits 21 to 22        142058   .439  .6695
+     DNA for MOTE16.32       using bits 20 to 21        142141   .683  .7528
+     DNA for MOTE16.32       using bits 19 to 20        141962   .155  .5617
+     DNA for MOTE16.32       using bits 18 to 19        142117   .613  .7299
+     DNA for MOTE16.32       using bits 17 to 18        141660  -.735  .2310
+     DNA for MOTE16.32       using bits 16 to 17        141535 -1.104  .1348
+     DNA for MOTE16.32       using bits 15 to 16        142111   .595  .7240
+     DNA for MOTE16.32       using bits 14 to 15        141991   .241  .5952
+     DNA for MOTE16.32       using bits 13 to 14        141791  -.349  .3635
+     DNA for MOTE16.32       using bits 12 to 13        141914   .014  .5055
+     DNA for MOTE16.32       using bits 11 to 12        141785  -.367  .3569
+     DNA for MOTE16.32       using bits 10 to 11        141670  -.706  .2401
+     DNA for MOTE16.32       using bits  9 to 10        141915   .017  .5067
+     DNA for MOTE16.32       using bits  8 to  9        141582  -.966  .1671
+     DNA for MOTE16.32       using bits  7 to  8        141837  -.213  .4155
+     DNA for MOTE16.32       using bits  6 to  7        142485  1.698  .9553
+     DNA for MOTE16.32       using bits  5 to  6        142010   .297  .6168
+     DNA for MOTE16.32       using bits  4 to  5        141951   .123  .5489
+     DNA for MOTE16.32       using bits  3 to  4        141411 -1.470  .0708
+     DNA for MOTE16.32       using bits  2 to  3        141901  -.025  .4902
+     DNA for MOTE16.32       using bits  1 to  2        142433  1.545  .9388
+--------------------------------------------------------------------------------
+   Test results for MOTE16.32      
+ Chi-square with 5^5-5^4=2500 d.of f. for sample size:2560000
+                               chisquare  equiv normal  p-value
+  Results fo COUNT-THE-1's in successive bytes:
+ byte stream for MOTE16.32        2465.14      -.493      .310990
+ byte stream for MOTE16.32        2427.11     -1.031      .151318
+--------------------------------------------------------------------------------
+ Chi-square with 5^5-5^4=2500 d.of f. for sample size: 256000
+                      chisquare  equiv normal  p value
+  Results for COUNT-THE-1's in specified bytes:
+           bits  1 to  8  2465.39      -.489      .312267
+           bits  2 to  9  2425.91     -1.048      .147369
+           bits  3 to 10  2499.11      -.013      .494969
+           bits  4 to 11  2553.86       .762      .776870
+           bits  5 to 12  2607.35      1.518      .935513
+           bits  6 to 13  2508.01       .113      .545117
+           bits  7 to 14  2582.72      1.170      .878976
+           bits  8 to 15  2552.00       .735      .768942
+           bits  9 to 16  2581.33      1.150      .874970
+           bits 10 to 17  2492.20      -.110      .456109
+           bits 11 to 18  2590.66      1.282      .900098
+           bits 12 to 19  2536.62       .518      .697751
+           bits 13 to 20  2408.75     -1.290      .098454
+           bits 14 to 21  2435.84      -.907      .182097
+           bits 15 to 22  2572.01      1.018      .845757
+           bits 16 to 23  2542.77       .605      .727376
+           bits 17 to 24  2484.34      -.221      .412358
+           bits 18 to 25  2661.76      2.288      .988922
+           bits 19 to 26  2659.76      2.259      .988067
+           bits 20 to 27  2554.70       .774      .780405
+           bits 21 to 28  2465.70      -.485      .313809
+           bits 22 to 29  2457.04      -.608      .271738
+           bits 23 to 30  2601.31      1.433      .924031
+           bits 24 to 31  2474.45      -.361      .358945
+           bits 25 to 32  2521.25       .300      .618095
+--------------------------------------------------------------------------------
+           CDPARK: result of ten tests on file MOTE16.32      
+            Of 12,000 tries, the average no. of successes
+                 should be 3523 with sigma=21.9
+            Successes: 3545    z-score:  1.005 p-value: .842447
+            Successes: 3514    z-score:  -.411 p-value: .340551
+            Successes: 3521    z-score:  -.091 p-value: .463618
+            Successes: 3511    z-score:  -.548 p-value: .291865
+            Successes: 3476    z-score: -2.146 p-value: .015932
+            Successes: 3561    z-score:  1.735 p-value: .958644
+            Successes: 3516    z-score:  -.320 p-value: .374623
+            Successes: 3509    z-score:  -.639 p-value: .261324
+            Successes: 3530    z-score:   .320 p-value: .625377
+            Successes: 3561    z-score:  1.735 p-value: .958644
+ 
+           square size   avg. no.  parked   sample sigma
+             100.            3524.400       24.654
+            KSTEST for the above 10: p=  .255050
+--------------------------------------------------------------------------------
+               This is the MINIMUM DISTANCE test
+              for random integers in the file MOTE16.32      
+     Sample no.    d^2     avg     equiv uni            
+           5     .1408   1.0226     .131934
+          10     .4084   1.2775     .336629
+          15     .5775   1.0255     .440343
+          20     .1920   1.0490     .175512
+          25     .5642   1.1376     .432772
+          30     .4516   1.0960     .364813
+          35     .2500   1.0719     .222203
+          40    1.5058   1.1827     .779824
+          45     .3297   1.1370     .282052
+          50    2.3184   1.1890     .902709
+          55     .4278   1.2177     .349446
+          60     .8072   1.1884     .555715
+          65     .1001   1.1706     .095734
+          70     .4714   1.2112     .377333
+          75     .5828   1.1910     .443323
+          80    1.6598   1.3081     .811398
+          85     .8324   1.2646     .566809
+          90     .0191   1.2793     .019047
+          95     .7934   1.2578     .549478
+         100    1.2558   1.2385     .716945
+     MINIMUM DISTANCE TEST for MOTE16.32      
+          Result of KS test on 20 transformed mindist^2's:
+                                  p-value= .961405
+--------------------------------------------------------------------------------
+               The 3DSPHERES test for file MOTE16.32      
+ sample no:  1     r^3=   2.260     p-value= .07257
+ sample no:  2     r^3=  31.031     p-value= .64455
+ sample no:  3     r^3=  20.751     p-value= .49928
+ sample no:  4     r^3=  23.462     p-value= .54255
+ sample no:  5     r^3=   1.002     p-value= .03284
+ sample no:  6     r^3=  12.354     p-value= .33755
+ sample no:  7     r^3=    .898     p-value= .02950
+ sample no:  8     r^3=   4.000     p-value= .12484
+ sample no:  9     r^3=  21.322     p-value= .50872
+ sample no: 10     r^3=  23.955     p-value= .54999
+ sample no: 11     r^3=  34.913     p-value= .68769
+ sample no: 12     r^3=  30.807     p-value= .64189
+ sample no: 13     r^3=  30.892     p-value= .64289
+ sample no: 14     r^3=  25.771     p-value= .57643
+ sample no: 15     r^3=  74.906     p-value= .91766
+ sample no: 16     r^3=   9.258     p-value= .26554
+ sample no: 17     r^3=  87.749     p-value= .94633
+ sample no: 18     r^3=   8.915     p-value= .25707
+ sample no: 19     r^3=  47.154     p-value= .79233
+ sample no: 20     r^3=  37.917     p-value= .71745
+       3DSPHERES test for file MOTE16.32            p-value= .214735
+--------------------------------------------------------------------------------
+            RESULTS OF SQUEEZE TEST FOR MOTE16.32      
+         Table of standardized frequency counts
+     ( (obs-exp)/sqrt(exp) )^2
+        for j taking values <=6,7,8,...,47,>=48:
+     -.8    -2.0      .1    -1.0     -.1      .3
+     1.0    -1.2     -.9      .5      .2    -1.4
+      .4     -.4      .9      .0     1.2     -.3
+     -.6     -.2      .2      .9     1.0     -.6
+     -.2      .0     -.4      .2     -.9     -.4
+    -1.0     -.1      .0    -1.0      .1      .1
+     -.9      .8    -1.2      .4     -.6      .0
+     -.1
+           Chi-square with 42 degrees of freedom: 23.304
+              z-score= -2.040  p-value= .008700
+______________________________________________________________
+--------------------------------------------------------------------------------
+                Test no.  1      p-value  .498825
+                Test no.  2      p-value  .243204
+                Test no.  3      p-value  .692282
+                Test no.  4      p-value  .787161
+                Test no.  5      p-value  .855164
+                Test no.  6      p-value  .651165
+                Test no.  7      p-value  .614542
+                Test no.  8      p-value  .555087
+                Test no.  9      p-value  .885969
+                Test no. 10      p-value  .624970
+   Results of the OSUM test for MOTE16.32      
+        KSTEST on the above 10 p-values:  .880506
+--------------------------------------------------------------------------------
+           The RUNS test for file MOTE16.32      
+     Up and down runs in a sample of 10000
+_________________________________________________ 
+                 Run test for MOTE16.32      :
+       runs up; ks test for 10 p's: .121917
+     runs down; ks test for 10 p's: .083959
+                 Run test for MOTE16.32      :
+       runs up; ks test for 10 p's: .126581
+     runs down; ks test for 10 p's: .446666
+--------------------------------------------------------------------------------
+                Results of craps test for MOTE16.32      
+  No. of wins:  Observed Expected
+                                98671    98585.86
+ Chisq=  17.39 for 20 degrees of freedom, p=  .37269
+               Throws Observed Expected  Chisq     Sum
+            SUMMARY  FOR MOTE16.32      
+                p-value for no. of wins: .648324
+                p-value for throws/game: .372694
+  Test completed.  File MOTE16.32      
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
