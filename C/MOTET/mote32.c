@@ -1,3 +1,9 @@
+/* MOTE32 - A small-state CSPRNG and Stream Cipher
+   MOTE32 is a MOTE with a 32+4-word internal state
+   MOTE32 may be seeded with a 1048-bit key
+   MOTE32 Copyright C.C.Kayne 2014, GNU GPL V.3, cckayne@gmail.com
+   MOTE32 is inspired by Bob Jenkins' PRNG insights (Public Domain).
+*/
 #include <stdio.h>
 #include <stddef.h>
 #include <string.h>
