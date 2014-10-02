@@ -1,4 +1,4 @@
-motet - The MOTE Cipher & SE Scrambler
+motet - The MOTE Stream Cipher & SE Scrambler
 MOTET  Copyright (C) C.C.Kayne 2014, GNU GPL V.3, cckayne@gmail.com
 
 This program comes with absolutely no warranty:
@@ -40,7 +40,7 @@ Why MOTET?
 
 The aim of MOTET is to demonstrate the portability of the basic SES cipher algorithm and its ease of implementation in a popular programming language other than Pascal and with CSPRNGs other than ISAAC (although ISAAC is included as a MOTET option). C may not have Free Pascal's advanced string-handling functions or object model, but it was surprising what could be accomplished in a couple of days translating most of the SES cipher routines to C.
 
-MOTET lacks only the inner Vigenere plus Scrambler keyword-loop and the Keccak (SHA-3) key derivation germane to SES, but these could easily be added. Despite this, MOTET still manages 4 super-encipherments on any message. The real elegance of MOTET is that it uses the new MOTE CSPRNGs for everything, including hashing and key-stretching, gaining in execution speed while keeping it all simple and compact.
+MOTET lacks only the inner Vigenere plus Scrambler keyword-loop and the Keccak (SHA-3) key derivation germane to SES, but these could easily be added. Despite this, MOTET still manages 4 super-encipherments on any message. The real elegance of MOTET is that it uses the new MOTE and BEDBUG CSPRNGs for everything, including hashing and key-stretching, gaining in execution speed while keeping it all simple and compact.
 
 MOTET is a hot-rod SES stripped down to the metal.
 
