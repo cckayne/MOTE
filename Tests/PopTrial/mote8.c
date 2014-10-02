@@ -75,7 +75,7 @@ u4 mote8_Random(void) {
 
 void mote8_Reset(void) {
 	register u4 i,r;
-	rcnt = 0; ri = 0;
+	rcnt = 0;
 	b = c = d = e = FLEASEED;
 	for (i=0; i<STSZ; i++) { state[i]=GOLDEN; rsl[i]=0; }
 }

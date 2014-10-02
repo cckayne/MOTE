@@ -57,6 +57,7 @@ PRNG tests passed by MOTE:
 * C.C.Kayne's GapTrial (value-spacings normal over all modulos)
 * C.C.Kayne's ModTrial (value-distributions uniform over all modulos)
 * C.C.Kayne's SeqTrial (same-value sequences normal over all modulos)
+* C.C.Kayne's PopTrial (bit-populations iid-normal over all trial ranges)
 * C.C.Kayne's Visual 1 & 2
 
 (Please view the Results.txt files in the relevant folders or verify the recorded results by re-running the tests themselves.)
