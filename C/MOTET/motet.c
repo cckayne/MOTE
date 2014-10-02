@@ -1,4 +1,4 @@
-// motet - The MOTE Stream Cipher & Scrambler in C
+// motet - The MOTET Stream Cipher & Scrambler in C
 // MOTET  Copyright C.C.Kayne 2014, GNU GPL V.3, cckayne@gmail.com  
 
 #include <stdio.h>
@@ -13,7 +13,10 @@
 #include "iscutils.h"
 #include "scrambler.h"
 
-#define TEST
+#define MOTE-REPO
+//#define BB-REPO
+//#define LOG
+//#define TEST
 
 int SCRAMBLER=TRUE; int NONCE=TRUE; int MIX=TRUE;
 
@@ -57,7 +60,7 @@ void log_clear(void) {
 
 int banner(void)
 	{
-		puts("motet - The MOTE Stream Cipher & SE Scrambler");
+		puts("motet - The MOTET Cipher & SE Scrambler");
 		puts("MOTET  Copyright (C) C.C.Kayne 2014, GNU GPL V.3, cckayne@gmail.com");
 		printf("\n%s\n", "This program comes with absolutely no warranty:"); 
 		puts("It is free software: You are welcome to redistribute it."); 
@@ -83,10 +86,10 @@ int options(void)
 int usage(void)
 	{
 		printf("\n");
-		printf("%s\n","Usage  : >motet <message> <key> <cipher mode> <cipher type> <output> <csprng>");
+		printf("%s\n","Usage  : >motet <msg> <key> <cipher mode> <cipher type> <output> <csprng>");
 		printf("%s\n","Example: >motet \"my message\" \"my strong key\" e m a 4");
 		printf("%s\n","(Encrypt \"my message\" on key \"my strong key\" with Caesar/MIX using MOTE8)"); 
-		puts("CSPRNG: ISAAC(0), BB128(1), BB256(2), BB512(3), MOTE8(4), MOTE16(5), MOTE32(6)");
+		puts("CSPRNG : ISAAC(0) BB128(1) BB256(2) BB512(3) MOTE8(4) MOTE16(5) MOTE32(6)");
 		printf("Maximum message length: %5d B; maximum key length: %4d B.\n",MAXM,MAXK-1);
 		printf("Minimum message length: %5d B; minimum key length: %4d B.\n",MINM,MINK  );
 		options();
@@ -104,7 +107,18 @@ int main(int argc, char *argv[])
 	// stir depth and nonce length
 	ub4 dep, sdep = MAXM, lnce = NLEN;
 	ub4 rounds = 7;
+	#ifdef MOTE-REPO
 	enum CSPRNG rng = MOTE8;
+	enum CSPRNG hasher = BB512;
+	#else
+	#ifdef BB-REPO
+	enum CSPRNG rng = BB128;
+	enum CSPRNG hasher = MOTE32;	
+	#else
+	enum CSPRNG rng = MOTE32;
+	enum CSPRNG hasher = ISAAC;
+	#endif
+	#endif
 	enum ciphermode cmode   = cmNone;
 	enum ciphertype ctype	= ctNone;
 	enum outputform oform	= ofHEX;
@@ -151,20 +165,21 @@ int main(int argc, char *argv[])
 	}
 	// B E G I N  P R E P A R A T I O N
 	// preliminary seeding
-	rSeed(rng,key,rounds);
+	rSeedAll(key,rounds);
 	
 	if (SCRAMBLER) {
 		sdep = SetDepth(rng,strlen(key));
 		#ifdef LOG
 		char tmp[12]=""; sprintf(tmp,"%d",sdep);
 		log_add("RNG",rName(rng));
+		log_add("HSH",rName(hasher));
 		log_add("DEP",tmp);
 		#endif
 	}
 	
 	if (NONCE) {
 		// obtain nonce/IV hash of fixed or random length
-		strcpy(nce,rNonce(rng,FALSE));
+		strcpy(nce,rNonce(hasher,FALSE));
 		// note nonce length for later
 		lnce = strlen(nce);
 	}
@@ -172,7 +187,7 @@ int main(int argc, char *argv[])
 	// Key-derivation starts:
 	if (TRUE) {
 		// 1) seed MOTE with a key-derived hash
-		strcpy(kdf,rHash(rng,key,rStateSize(rng)*4));
+		strcpy(kdf,rHash(hasher,key,rStateSize(rng)*4));
 		rSeed(rng,kdf,rounds);
 		// 2) calculate stir-depth
 		dep = rDepth(rng,kdf);
@@ -287,7 +302,7 @@ int main(int argc, char *argv[])
 		// Mode: Decipher
 		if (cmode==cmDecipher) puts(ptx);
 		
-		// belt'n'braces variable cleanup
+		// belt'n'braces memory wipe
 		if (TRUE) {
 			rResetAll();
 			memset(msg,0,sizeof(msg));memset(msg,0xFF,sizeof(msg));memset(msg,0,sizeof(msg));

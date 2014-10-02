@@ -1,4 +1,4 @@
-motet - The MOTE Stream Cipher & SE Scrambler
+motet - The MOTET Cipher & SE Scrambler
 MOTET  Copyright (C) C.C.Kayne 2014, GNU GPL V.3, cckayne@gmail.com
 
 This program comes with absolutely no warranty:
