@@ -60,12 +60,13 @@ PRNG tests passed by MOTE:
 * C.C.Kayne's PopTrial (bit-populations iid-normal over all trial ranges)
 * C.C.Kayne's Visual 1 & 2
 
-(Please view the Results.txt files in the relevant folders or verify the recorded results by re-running the tests themselves.)
+(Please view the Results.txt files in the relevant folders or verify the recorded results by re-running the tests themselves. The principal MOTE repositories are listed at the foot of this document.)
 
 Have fun with MOTE, and don't hesitate to get in touch if you encounter issues with any of the files included in this distribution. As always, your comments, suggestions, criticism and general feedback are welcomed.
 
 C.C.Kayne
 cckayne@gmail.com
 https://github.com/cckayne/MOTE
+https://code.google.com/p/mote-csprng-stream-cipher/
 https://code.google.com/p/bedbug-csprng-stream-cipher/
 https://sourceforge.net/projects/bedbug-csprng-stream-cipher/

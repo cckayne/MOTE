@@ -1,8 +1,8 @@
 MOTE was subjected to the NIST industry-standard suite of statistical tests for randomness. CSPRNGs tested were ISAAC, MOTE8, MOTE16 and MOTE32, plus Marsaglia's PRNG KISS. ISAAC was used as the "gold standard" of cryptographically watertight comparison and KISS as another sanity check. CONG (a linear congruential generator) was included as an example of a wanting PRNG which fails a good many of the tests in the NIST battery.
 
-As expected after successful results with DIEHARD, all 3 MOTE variants passed the more rigorous NIST tests.
+As expected after successful results with DIEHARD, all 3 MOTE variants passed the more rigorous NIST tests, whose summaries are to be found inside the Results folder.
 
-As the resulting NIST output files and folders were too bulky to include as part of the MOTE repository, you are urged to reproduce the tests which were performed in accordance with the following sets of parameters.
+As the complete NIST output files and directories were too bulky to include as part of the MOTE repository, you are urged to reproduce the tests which were performed in accordance with the following sets of parameters.
 
 Various keys were used to seed the PRNGs and the test results for each placed in separate folders. Changing the seed changed the p-values significantly in every case.
 
