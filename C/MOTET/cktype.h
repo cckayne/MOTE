@@ -7,6 +7,12 @@
 #define FALSE 0
 // terminal line length
 #define LINE 70
+// are we testing?
+//#define TEST
+// verbose test output
+//#define VERBOSE
+// are we logging?
+//#define LOG
 // maximum text length (bytes)
 #define MAXM 20480
 #define MAXK 2048

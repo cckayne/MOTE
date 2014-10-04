@@ -1,0 +1,11 @@
+Fast and cryptographically secure random number streams
+Tuned rotation constants bring rapid mixing (more than 21 bits avalanche)
+Rotation constants switched unpredictably on each round of the generator
+Seedable with keys up to 256, 512, or 1024 bits in length
+Extremely long periods: Guaranteed to be well in excess of 2**256
+The essential RNG can be coded in just 5 lines of C
+MOTE has passed the most stringent industry-standard tests: NIST and DIEHARD
+Implemented identically in C and Pascal, with full source code and sample programs
+Includes the MOTET Cipher & SE Scrambler, a fast encryption program in C
+Package includes comprehensive test results for all MOTE variants
+Test MOTE yourself: several PRNG test programs are included in the distribution.
