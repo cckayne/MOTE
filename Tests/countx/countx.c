@@ -55,7 +55,7 @@ static u4 loglen, terms;
 #define FLEASEED 0xf1ea5eed
 /* allow testing non-powers of 2 combos */
 //#define MOD
-#define NOT
+//#define NOT
 #define DORSW
 #define RI 0
 

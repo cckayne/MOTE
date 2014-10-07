@@ -5,7 +5,7 @@
 
 What is MOTE?
 
-MOTE is a fast small-state cryptographically secure pseudo-random number generator (CSPRNG) and stream cipher. MOTE exhibits uniform distribution, mixes extremely rapidly, has no detected bias, and comes in three variants: MOTE8, with an internal state array of 8+4 32-bit words; MOTE16, with an internal state of 16+4 words; and MOTE32 with a 32+4-word state. The former permit seeding with a key of up to 256 or 512 bits, the latter with a 1024-bit key.
+MOTE is a fast, small-state, cryptographically secure pseudo-random number generator (CSPRNG) and stream cipher. MOTE exhibits uniform distribution, mixes extremely rapidly, has no detected bias, and comes in three variants: MOTE8, with an internal state array of 8+4 32-bit words; MOTE16, with an internal state of 16+4 words; and MOTE32 with a 32+4-word state. The former permit seeding with a key of up to 256 or 512 bits, the latter with a 1024-bit key.
 
 Reduced to essentials, MOTE is only 5 lines of code:
 
@@ -67,6 +67,7 @@ Have fun with MOTE, and don't hesitate to get in touch if you encounter issues w
 C.C.Kayne
 cckayne@gmail.com
 https://github.com/cckayne/MOTE
+https://sourceforge.net/projects/mote-csprng-stream-cipher/
 https://code.google.com/p/mote-csprng-stream-cipher/
 https://code.google.com/p/bedbug-csprng-stream-cipher/
 https://sourceforge.net/projects/bedbug-csprng-stream-cipher/
