@@ -88,6 +88,34 @@ Serial correlation coefficient is 0.000044 (totally uncorrelated = 0.0).
 
 
 
+>ent -b mote64.32
+Entropy = 1.000000 bits per bit.
+
+Optimum compression would reduce the size
+of this 536870912 bit file by 0 percent.
+
+Chi square distribution for 536870912 samples is 0.54, and randomly
+would exceed this value 46.37 percent of the times.
+
+Arithmetic mean value of data bits is 0.5000 (0.5 = random).
+Monte Carlo value for Pi is 3.141439864 (error 0.00 percent).
+Serial correlation coefficient is -0.000058 (totally uncorrelated = 0.0).
+
+>ent mote64.32
+Entropy = 7.999997 bits per byte.
+
+Optimum compression would reduce the size
+of this 67108864 byte file by 0 percent.
+
+Chi square distribution for 67108864 samples is 275.46, and randomly
+would exceed this value 18.08 percent of the times.
+
+Arithmetic mean value of data bytes is 127.4956 (127.5 = random).
+Monte Carlo value for Pi is 3.141439864 (error 0.00 percent).
+Serial correlation coefficient is -0.000127 (totally uncorrelated = 0.0).
+
+
+
 Sanity checks: ISAAC, KISS & CONG
 ---------------------------------
 

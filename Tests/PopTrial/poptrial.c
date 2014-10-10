@@ -17,7 +17,7 @@ over several trials converges to an expected normal distribution for i.i.d rando
 #define MODP1 MODU+1
 
 enum CSPRNG	rng = MOTE8;
-const char *RNGs[11] = { "ISAAC", "BB128", "BB256", "BB512", "MOTE8", "MOTE16", "MOTE32", "MITE8", "MITE16", "MITE32", "MITE64" };
+const char *RNGs[8] = { "ISAAC", "MOTE8", "MOTE16", "MOTE32", "MOTE64", "BB128", "BB256", "BB512" };
 
 static ub4	r,m;
 long int 	i,j;
@@ -208,7 +208,7 @@ int main(int argc, char *argv[]) {
 	// check the command line
 	if (argc>=2) q1 = atoi(argv[1]);
 	if (argc>=3) q2 = atoi(argv[2]);
-	if (argc>=4) rng= atoi(argv[3]) % 11;
+	if (argc>=4) rng= atoi(argv[3]) % 8;
 	if (argc>=5) strcpy(seed,argv[4]);
 	
 	#ifdef TEST

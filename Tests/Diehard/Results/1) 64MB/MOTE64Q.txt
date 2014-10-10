@@ -1,0 +1,333 @@
+ BIRTHDAY SPACINGS TEST, M= 512 N=2**24 LAMBDA=  2.0000
+           mote64.32       using bits  1 to 24 p-value=  .935509
+           mote64.32       using bits  2 to 25 p-value=  .675540
+           mote64.32       using bits  3 to 26 p-value=  .411744
+           mote64.32       using bits  4 to 27 p-value=  .321135
+           mote64.32       using bits  5 to 28 p-value=  .474508
+           mote64.32       using bits  6 to 29 p-value=  .751048
+           mote64.32       using bits  7 to 30 p-value=  .738996
+           mote64.32       using bits  8 to 31 p-value=  .643664
+           mote64.32       using bits  9 to 32 p-value=  .518238
+   The 9 p-values were
+        .935509   .675540   .411744   .321135   .474508
+        .751048   .738996   .643664   .518238
+  A KSTEST for the 9 p-values yields  .719622
+--------------------------------------------------------------------------------
+           OPERM5 test for file mote64.32      
+ chisquare for 99 degrees of freedom=126.921; p-value= .969240
+           OPERM5 test for file mote64.32      
+ chisquare for 99 degrees of freedom=135.644; p-value= .991425
+--------------------------------------------------------------------------------
+    Binary rank test for mote64.32      
+         Rank test for 31x31 binary matrices:
+        rows from leftmost 31 bits of each 32-bit integer
+      rank   observed  expected (o-e)^2/e  sum
+        28       241     211.4  4.139164    4.139
+        29      5304    5134.0  5.628449    9.768
+        30     22975   23103.0   .709690   10.477
+        31     11480   11551.5   .442863   10.920
+  chisquare=10.920 for 3 d. of f.; p-value= .988310
+    Binary rank test for mote64.32      
+         Rank test for 32x32 binary matrices:
+        rows from leftmost 32 bits of each 32-bit integer
+      rank   observed  expected (o-e)^2/e  sum
+        29       201     211.4   .513367     .513
+        30      5268    5134.0  3.496926    4.010
+        31     23226   23103.0   .654350    4.665
+        32     11305   11551.5  5.261148    9.926
+  chisquare= 9.926 for 3 d. of f.; p-value= .981607
+--------------------------------------------------------------------------------
+ b-rank test for bits  1 to  8 p=1-exp(-SUM/2)= .18413
+ b-rank test for bits  2 to  9 p=1-exp(-SUM/2)= .06833
+ b-rank test for bits  3 to 10 p=1-exp(-SUM/2)= .55316
+ b-rank test for bits  4 to 11 p=1-exp(-SUM/2)= .65607
+ b-rank test for bits  5 to 12 p=1-exp(-SUM/2)= .68145
+ b-rank test for bits  6 to 13 p=1-exp(-SUM/2)= .06338
+ b-rank test for bits  7 to 14 p=1-exp(-SUM/2)= .23927
+ b-rank test for bits  8 to 15 p=1-exp(-SUM/2)= .32319
+ b-rank test for bits  9 to 16 p=1-exp(-SUM/2)= .40368
+ b-rank test for bits 10 to 17 p=1-exp(-SUM/2)= .39669
+ b-rank test for bits 11 to 18 p=1-exp(-SUM/2)= .70498
+ b-rank test for bits 12 to 19 p=1-exp(-SUM/2)= .89815
+ b-rank test for bits 13 to 20 p=1-exp(-SUM/2)= .31708
+ b-rank test for bits 14 to 21 p=1-exp(-SUM/2)= .28282
+ b-rank test for bits 15 to 22 p=1-exp(-SUM/2)= .11882
+ b-rank test for bits 16 to 23 p=1-exp(-SUM/2)= .14706
+ b-rank test for bits 17 to 24 p=1-exp(-SUM/2)= .53224
+ b-rank test for bits 18 to 25 p=1-exp(-SUM/2)= .36509
+ b-rank test for bits 19 to 26 p=1-exp(-SUM/2)= .94233
+ b-rank test for bits 20 to 27 p=1-exp(-SUM/2)= .64350
+ b-rank test for bits 21 to 28 p=1-exp(-SUM/2)= .00597
+ b-rank test for bits 22 to 29 p=1-exp(-SUM/2)= .19888
+ b-rank test for bits 23 to 30 p=1-exp(-SUM/2)= .10746
+ b-rank test for bits 24 to 31 p=1-exp(-SUM/2)= .26837
+ b-rank test for bits 25 to 32 p=1-exp(-SUM/2)= .82841
+   TEST SUMMARY, 25 tests on 100,000 random 6x8 matrices
+ These should be 25 uniform [0,1] random variables:
+     .184133     .068329     .553163     .656069     .681446
+     .063379     .239269     .323195     .403680     .396686
+     .704981     .898147     .317084     .282823     .118822
+     .147056     .532244     .365094     .942331     .643498
+     .005974     .198877     .107461     .268369     .828407
+   brank test summary for mote64.32      
+       The KS test for those 25 supposed UNI's yields
+                    KS p-value= .867991
+--------------------------------------------------------------------------------
+  No. missing words should average  141909. with sigma=428.
+ tst no  1:  141592 missing words,    -.74 sigmas from mean, p-value= .22922
+ tst no  2:  141763 missing words,    -.34 sigmas from mean, p-value= .36622
+ tst no  3:  142333 missing words,     .99 sigmas from mean, p-value= .83889
+ tst no  4:  141818 missing words,    -.21 sigmas from mean, p-value= .41551
+ tst no  5:  141583 missing words,    -.76 sigmas from mean, p-value= .22290
+ tst no  6:  142748 missing words,    1.96 sigmas from mean, p-value= .97497
+ tst no  7:  141450 missing words,   -1.07 sigmas from mean, p-value= .14159
+ tst no  8:  142125 missing words,     .50 sigmas from mean, p-value= .69284
+ tst no  9:  141088 missing words,   -1.92 sigmas from mean, p-value= .02749
+ tst no 10:  142167 missing words,     .60 sigmas from mean, p-value= .72643
+ tst no 11:  142010 missing words,     .24 sigmas from mean, p-value= .59298
+ tst no 12:  141611 missing words,    -.70 sigmas from mean, p-value= .24289
+ tst no 13:  141996 missing words,     .20 sigmas from mean, p-value= .58024
+ tst no 14:  142049 missing words,     .33 sigmas from mean, p-value= .62791
+ tst no 15:  141871 missing words,    -.09 sigmas from mean, p-value= .46432
+ tst no 16:  141919 missing words,     .02 sigmas from mean, p-value= .50901
+ tst no 17:  141427 missing words,   -1.13 sigmas from mean, p-value= .12989
+ tst no 18:  141176 missing words,   -1.71 sigmas from mean, p-value= .04332
+ tst no 19:  141651 missing words,    -.60 sigmas from mean, p-value= .27306
+ tst no 20:  141995 missing words,     .20 sigmas from mean, p-value= .57933
+--------------------------------------------------------------------------------
+    OPSO for mote64.32       using bits 23 to 32        141650  -.894  .1856
+    OPSO for mote64.32       using bits 22 to 31        142329  1.447  .9261
+    OPSO for mote64.32       using bits 21 to 30        142243  1.151  .8751
+    OPSO for mote64.32       using bits 20 to 29        141868  -.143  .4433
+    OPSO for mote64.32       using bits 19 to 28        142019   .378  .6474
+    OPSO for mote64.32       using bits 18 to 27        141994   .292  .6148
+    OPSO for mote64.32       using bits 17 to 26        142395  1.675  .9530
+    OPSO for mote64.32       using bits 16 to 25        143473  5.392 1.0000
+    OPSO for mote64.32       using bits 15 to 24        142260  1.209  .8867
+    OPSO for mote64.32       using bits 14 to 23        142698  2.720  .9967
+    OPSO for mote64.32       using bits 13 to 22        142311  1.385  .9170
+    OPSO for mote64.32       using bits 12 to 21        142650  2.554  .9947
+    OPSO for mote64.32       using bits 11 to 20        142679  2.654  .9960
+    OPSO for mote64.32       using bits 10 to 19        141879  -.105  .4584
+    OPSO for mote64.32       using bits  9 to 18        142180   .933  .8247
+    OPSO for mote64.32       using bits  8 to 17        142138   .789  .7848
+    OPSO for mote64.32       using bits  7 to 16        142051   .489  .6874
+    OPSO for mote64.32       using bits  6 to 15        141562 -1.198  .1155
+    OPSO for mote64.32       using bits  5 to 14        142881  3.351  .9996
+    OPSO for mote64.32       using bits  4 to 13        142647  2.544  .9945
+    OPSO for mote64.32       using bits  3 to 12        142371  1.592  .9443
+    OPSO for mote64.32       using bits  2 to 11        142786  3.023  .9987
+    OPSO for mote64.32       using bits  1 to 10        141892  -.060  .4762
+    OQSO for mote64.32       using bits 28 to 32        142437  1.789  .9632
+    OQSO for mote64.32       using bits 27 to 31        141324 -1.984  .0236
+    OQSO for mote64.32       using bits 26 to 30        141936   .090  .5360
+    OQSO for mote64.32       using bits 25 to 29        142428  1.758  .9606
+    OQSO for mote64.32       using bits 24 to 28        141778  -.445  .3281
+    OQSO for mote64.32       using bits 23 to 27        141836  -.249  .4018
+    OQSO for mote64.32       using bits 22 to 26        142342  1.467  .9288
+    OQSO for mote64.32       using bits 21 to 25        141485 -1.438  .0752
+    OQSO for mote64.32       using bits 20 to 24        141122 -2.669  .0038
+    OQSO for mote64.32       using bits 19 to 23        141962   .179  .5709
+    OQSO for mote64.32       using bits 18 to 22        141562 -1.177  .1195
+    OQSO for mote64.32       using bits 17 to 21        141549 -1.221  .1110
+    OQSO for mote64.32       using bits 16 to 20        142162   .857  .8041
+    OQSO for mote64.32       using bits 15 to 19        141926   .057  .5225
+    OQSO for mote64.32       using bits 14 to 18        142047   .467  .6796
+    OQSO for mote64.32       using bits 13 to 17        141768  -.479  .3159
+    OQSO for mote64.32       using bits 12 to 16        141513 -1.343  .0896
+    OQSO for mote64.32       using bits 11 to 15        142300  1.324  .9073
+    OQSO for mote64.32       using bits 10 to 14        141542 -1.245  .1065
+    OQSO for mote64.32       using bits  9 to 13        141955   .155  .5615
+    OQSO for mote64.32       using bits  8 to 12        141687  -.754  .2255
+    OQSO for mote64.32       using bits  7 to 11        141489 -1.425  .0771
+    OQSO for mote64.32       using bits  6 to 10        142472  1.907  .9718
+    OQSO for mote64.32       using bits  5 to  9        142254  1.168  .8787
+    OQSO for mote64.32       using bits  4 to  8        141970   .206  .5815
+    OQSO for mote64.32       using bits  3 to  7        141844  -.221  .4124
+    OQSO for mote64.32       using bits  2 to  6        142027   .399  .6550
+    OQSO for mote64.32       using bits  1 to  5        141848  -.208  .4177
+     DNA for mote64.32       using bits 31 to 32        141041 -2.561  .0052
+     DNA for mote64.32       using bits 30 to 31        142049   .412  .6598
+     DNA for mote64.32       using bits 29 to 30        142030   .356  .6391
+     DNA for mote64.32       using bits 28 to 29        141849  -.178  .4294
+     DNA for mote64.32       using bits 27 to 28        141665  -.721  .2355
+     DNA for mote64.32       using bits 26 to 27        141709  -.591  .2773
+     DNA for mote64.32       using bits 25 to 26        141910   .002  .5008
+     DNA for mote64.32       using bits 24 to 25        141425 -1.429  .0765
+     DNA for mote64.32       using bits 23 to 24        141911   .005  .5020
+     DNA for mote64.32       using bits 22 to 23        141963   .158  .5629
+     DNA for mote64.32       using bits 21 to 22        141145 -2.255  .0121
+     DNA for mote64.32       using bits 20 to 21        142090   .533  .7030
+     DNA for mote64.32       using bits 19 to 20        141385 -1.547  .0610
+     DNA for mote64.32       using bits 18 to 19        142333  1.250  .8943
+     DNA for mote64.32       using bits 17 to 18        142042   .391  .6522
+     DNA for mote64.32       using bits 16 to 17        141788  -.358  .3602
+     DNA for mote64.32       using bits 15 to 16        142157   .731  .7675
+     DNA for mote64.32       using bits 14 to 15        141660  -.735  .2310
+     DNA for mote64.32       using bits 13 to 14        141876  -.098  .4608
+     DNA for mote64.32       using bits 12 to 13        141920   .031  .5126
+     DNA for mote64.32       using bits 11 to 12        142786  2.586  .9951
+     DNA for mote64.32       using bits 10 to 11        141993   .247  .5975
+     DNA for mote64.32       using bits  9 to 10        142311  1.185  .8820
+     DNA for mote64.32       using bits  8 to  9        141594  -.930  .1761
+     DNA for mote64.32       using bits  7 to  8        141782  -.376  .3536
+     DNA for mote64.32       using bits  6 to  7        141222 -2.028  .0213
+     DNA for mote64.32       using bits  5 to  6        141923   .040  .5161
+     DNA for mote64.32       using bits  4 to  5        141696  -.629  .2646
+     DNA for mote64.32       using bits  3 to  4        141893  -.048  .4808
+     DNA for mote64.32       using bits  2 to  3        141473 -1.287  .0990
+     DNA for mote64.32       using bits  1 to  2        141978   .203  .5803
+--------------------------------------------------------------------------------
+   Test results for mote64.32      
+ Chi-square with 5^5-5^4=2500 d.of f. for sample size:2560000
+                               chisquare  equiv normal  p-value
+  Results fo COUNT-THE-1's in successive bytes:
+ byte stream for mote64.32        2391.60     -1.533      .062641
+ byte stream for mote64.32        2412.27     -1.241      .107358
+--------------------------------------------------------------------------------
+ Chi-square with 5^5-5^4=2500 d.of f. for sample size: 256000
+                      chisquare  equiv normal  p value
+  Results for COUNT-THE-1's in specified bytes:
+           bits  1 to  8  2476.73      -.329      .371038
+           bits  2 to  9  2395.46     -1.478      .069640
+           bits  3 to 10  2594.70      1.339      .909757
+           bits  4 to 11  2351.89     -2.095      .018105
+           bits  5 to 12  2558.98       .834      .797872
+           bits  6 to 13  2398.26     -1.439      .075102
+           bits  7 to 14  2525.83       .365      .642556
+           bits  8 to 15  2617.31      1.659      .951448
+           bits  9 to 16  2580.37      1.137      .872153
+           bits 10 to 17  2490.77      -.131      .448055
+           bits 11 to 18  2473.78      -.371      .355392
+           bits 12 to 19  2588.03      1.245      .893412
+           bits 13 to 20  2522.26       .315      .623534
+           bits 14 to 21  2540.84       .578      .718243
+           bits 15 to 22  2470.82      -.413      .339904
+           bits 16 to 23  2527.58       .390      .651749
+           bits 17 to 24  2497.25      -.039      .484514
+           bits 18 to 25  2481.26      -.265      .395505
+           bits 19 to 26  2519.18       .271      .606913
+           bits 20 to 27  2562.14       .879      .810229
+           bits 21 to 28  2543.13       .610      .729070
+           bits 22 to 29  2417.48     -1.167      .121593
+           bits 23 to 30  2423.70     -1.079      .140280
+           bits 24 to 31  2415.30     -1.198      .115495
+           bits 25 to 32  2455.40      -.631      .264091
+--------------------------------------------------------------------------------
+           CDPARK: result of ten tests on file mote64.32      
+            Of 12,000 tries, the average no. of successes
+                 should be 3523 with sigma=21.9
+            Successes: 3515    z-score:  -.365 p-value: .357445
+            Successes: 3484    z-score: -1.781 p-value: .037471
+            Successes: 3533    z-score:   .457 p-value: .676028
+            Successes: 3545    z-score:  1.005 p-value: .842447
+            Successes: 3518    z-score:  -.228 p-value: .409702
+            Successes: 3523    z-score:   .000 p-value: .500000
+            Successes: 3517    z-score:  -.274 p-value: .392053
+            Successes: 3531    z-score:   .365 p-value: .642555
+            Successes: 3507    z-score:  -.731 p-value: .232514
+            Successes: 3498    z-score: -1.142 p-value: .126820
+ 
+           square size   avg. no.  parked   sample sigma
+             100.            3517.100       16.816
+            KSTEST for the above 10: p=  .349252
+--------------------------------------------------------------------------------
+               This is the MINIMUM DISTANCE test
+              for random integers in the file mote64.32      
+     Sample no.    d^2     avg     equiv uni            
+           5     .2217    .4784     .199722
+          10    1.9485    .7436     .858894
+          15    1.6246    .9176     .804613
+          20     .7713    .8352     .539395
+          25     .3971    .9326     .329097
+          30     .2232    .8838     .200955
+          35    2.2499    .9875     .895779
+          40     .0967    .9568     .092642
+          45     .2925    .9780     .254696
+          50     .2677    .9300     .235903
+          55    1.7252   1.0214     .823405
+          60     .7449    .9729     .527010
+          65     .5253    .9811     .410201
+          70     .7864    .9847     .546332
+          75     .5284    .9568     .411995
+          80     .8102    .9329     .557023
+          85     .3485    .9400     .295488
+          90     .0963    .9339     .092214
+          95     .3588    .9374     .302750
+         100     .7286    .9174     .519197
+     MINIMUM DISTANCE TEST for mote64.32      
+          Result of KS test on 20 transformed mindist^2's:
+                                  p-value= .533543
+--------------------------------------------------------------------------------
+               The 3DSPHERES test for file mote64.32      
+ sample no:  1     r^3=    .703     p-value= .02315
+ sample no:  2     r^3=  23.745     p-value= .54683
+ sample no:  3     r^3=   8.990     p-value= .25894
+ sample no:  4     r^3=  73.768     p-value= .91447
+ sample no:  5     r^3=   1.909     p-value= .06165
+ sample no:  6     r^3= 106.589     p-value= .97136
+ sample no:  7     r^3=  99.552     p-value= .96379
+ sample no:  8     r^3=    .804     p-value= .02645
+ sample no:  9     r^3=  72.947     p-value= .91210
+ sample no: 10     r^3=  30.584     p-value= .63921
+ sample no: 11     r^3=   5.644     p-value= .17150
+ sample no: 12     r^3=  52.283     p-value= .82496
+ sample no: 13     r^3=  13.577     p-value= .36401
+ sample no: 14     r^3=   2.121     p-value= .06825
+ sample no: 15     r^3=  58.734     p-value= .85883
+ sample no: 16     r^3=   4.171     p-value= .12980
+ sample no: 17     r^3= 114.566     p-value= .97805
+ sample no: 18     r^3=  42.648     p-value= .75867
+ sample no: 19     r^3=  11.126     p-value= .30985
+ sample no: 20     r^3=  38.341     p-value= .72141
+       3DSPHERES test for file mote64.32            p-value= .808679
+--------------------------------------------------------------------------------
+            RESULTS OF SQUEEZE TEST FOR mote64.32      
+         Table of standardized frequency counts
+     ( (obs-exp)/sqrt(exp) )^2
+        for j taking values <=6,7,8,...,47,>=48:
+     2.0      .5     -.4    -1.0    -1.3      .3
+      .0     -.1    -1.9      .2      .4     -.2
+      .9      .4     1.4     -.1      .1    -1.5
+     -.5    -1.5     1.0      .9      .0     -.4
+    -1.0      .8      .2     -.6     2.0      .6
+      .0     -.5     1.2      .0    -1.3      .6
+     -.9      .2     1.7     -.7    -1.3      .0
+     -.1
+           Chi-square with 42 degrees of freedom: 36.913
+              z-score=  -.555  p-value= .306292
+______________________________________________________________
+--------------------------------------------------------------------------------
+                Test no.  1      p-value  .804486
+                Test no.  2      p-value  .397778
+                Test no.  3      p-value  .153964
+                Test no.  4      p-value  .146398
+                Test no.  5      p-value  .065286
+                Test no.  6      p-value  .698034
+                Test no.  7      p-value  .248226
+                Test no.  8      p-value  .259014
+                Test no.  9      p-value  .357372
+                Test no. 10      p-value  .769675
+   Results of the OSUM test for mote64.32      
+        KSTEST on the above 10 p-values:  .647050
+--------------------------------------------------------------------------------
+           The RUNS test for file mote64.32      
+     Up and down runs in a sample of 10000
+_________________________________________________ 
+                 Run test for mote64.32      :
+       runs up; ks test for 10 p's: .235844
+     runs down; ks test for 10 p's: .381110
+                 Run test for mote64.32      :
+       runs up; ks test for 10 p's: .301128
+     runs down; ks test for 10 p's: .892076
+--------------------------------------------------------------------------------
+                Results of craps test for mote64.32      
+  No. of wins:  Observed Expected
+                                98444    98585.86
+ Chisq=  30.48 for 20 degrees of freedom, p=  .93753
+               Throws Observed Expected  Chisq     Sum
+            SUMMARY  FOR mote64.32      
+                p-value for no. of wins: .262884
+                p-value for throws/game: .937534
+  Test completed.  File mote64.32      
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::

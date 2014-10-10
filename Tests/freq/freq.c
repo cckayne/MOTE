@@ -22,9 +22,9 @@ u4 terms  = 5;
 #define TABLE
 
 //#define MOTE8
-#define MOTE16
+//#define MOTE16
 //#define MOTE32
-//#define MOTE64
+#define MOTE64
 
 #ifdef MOTE8
 #define STSZ 8
@@ -109,10 +109,10 @@ static const struct Rsw rsw[4] = {
 #ifdef MOTE64
 #define RSW 3
 static const struct Rsw rsw[4] = {
-13,  11, 11, // avalanche: 17.75 bits (worst case)
-19,  24,  6, // avalanche: 17.75 bits (worst case)
-14,   9, 22, // avalanche: 17.75 bits (worst case)
-17,  20, 16  // avalanche: 17.87 bits (worst case)
+11, 12, 24, // avalanche: 18.25 bits
+ 9,  8,  8, // avalanche: 18.00 bits
+18, 20, 22, // avalanche: 17.88 bits
+ 3, 23, 30, // avalanche: 17.63 bits
 #endif
 };
 

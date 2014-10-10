@@ -4,7 +4,7 @@
 #include "cktype.h"
 
 // available CSPRNGs
-enum CSPRNG { ISAAC, BB128, BB256, BB512, MOTE8, MOTE16, MOTE32, MITE8, MITE16, MITE32, MITE64 };
+enum CSPRNG { ISAAC, MOTE8, MOTE16, MOTE32, MOTE64, BB128, BB256, BB512 };
 
 // obtain a pseudo-random unsigned 32-bit quantity
 //  from an available CSPRNG 

@@ -37,16 +37,24 @@ static u4 loglen, terms;
 
 //#define MOTE8
 //#define MOTE16
-#define MOTE32
+//#define MOTE32
+#define MOTE64
 
 #ifdef MOTE8
 #define STSZ 8
+#define NAME "MOTE8"
 #endif
 #ifdef MOTE16
 #define STSZ 16
+#define NAME "MOTE16"
 #endif
 #ifdef MOTE32
 #define STSZ 32
+#define NAME "MOTE32"
+#endif
+#ifdef MOTE64
+#define STSZ 64
+#define NAME "MOTE64"
 #endif
 #define STM1 STSZ-1
 
@@ -134,13 +142,29 @@ static const struct Rsw rsw[RSW+1] = {
 // 3, 27, 30, // avalanche: 19.00 bits
 // 6, 28, 18, // avalanche: 18.50 bits
 //10, 18, 10, // avalanche: 18.75 bits
-//11,  2, 26, // avalanche: 18.75 bits
 //15, 23, 22, // avalanche: 18.50 bits
-//19, 19, 14, // avalanche: 18.75 bits
 //25,  1, 24, // avalanche: 19.00 bits
 //30,  1, 16, // avalanche: 19.00 bits
-//30,  4, 20, // avalanche: 19.00 bits
 //30,  8, 12, // avalanche: 18.50 bits
+#else
+30,  4, 20, // avalanche: 19.00 bits
+11,  2, 26, // avalanche: 18.75 bits
+19, 19, 14, // avalanche: 18.75 bits
+ 6, 16, 12  // avalanche: 18.25 bits
+#endif
+#endif
+#ifdef MOTE64
+#define RSW 3
+static const struct Rsw rsw[RSW+1] = {
+#ifndef NOT
+11, 12, 24, // avalanche: 18.25 bits
+ 9,  8,  8, // avalanche: 18.00 bits
+18, 20, 22, // avalanche: 17.88 bits
+ 3, 23, 30, // avalanche: 17.63 bits
+//21, 25, 20, // avalanche: 17.63 bits
+//25,  2, 18, // avalanche: 17.63 bits
+//25,  5,  8, // avalanche: 17.63 bits
+//30,  6, 26, // avalanche: 17.63 bits
 #else
 30,  4, 20, // avalanche: 19.00 bits
 11,  2, 26, // avalanche: 18.75 bits
@@ -385,15 +409,7 @@ int main( int argc, char **argv)
 	// trials loop
 	for (trial=0; trial<trials; trial++) {
 		printf("\n%s: ",argv[0]);
-		#ifdef MOTE8
-		printf("MOTE8");
-		#endif
-		#ifdef MOTE16
-		printf("MOTE16");
-		#endif
-		#ifdef MOTE32
-		printf("MOTE32");
-		#endif
+		printf("%s",NAME);
 		#ifdef NOT
 		printf("N");
 		#endif

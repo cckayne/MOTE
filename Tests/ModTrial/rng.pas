@@ -1,11 +1,5 @@
 { Universal 32-bit RNG wrapper unit: ISAAC and Marsaglia rngs 
-  ----------------------------------------------------------- 
-  NOTE on MOD operation: Monte Carlo trials have shown that the use of MOD 
-  on 32-bit pseudo-random values does NOT skew the distribution enough to 
-  warrant using an alternative scheme for limiting the range of the RNGs. 
-  
-  An alternative scheme was tested and it resulted in a somewhat less
-  uniform distribution than did the MOD operator alone.}
+  ----------------------------------------------------------- }
 
 {$mode delphi}
 {$define clean}
@@ -15,10 +9,10 @@ unit rng;
 interface
 
 // all rngs
-type TRNG = (CONG,COSWB,ISAAC,B128,B256,B512,MOT8,MOT16,MOT32,KILFI,KISS,KISWB,LFIB4,MWC,MWSWB,SHR3,SHRSW,SWB); 
+type TRNG = (CONG,COSWB,ISAAC,B128,B256,B512,MOT8,MOT16,MOT32,MOT64,KILFI,KISS,KISWB,LFIB4,MWC,MWSWB,SHR3,SHRSW,SWB); 
 	 TRNGarray = array[CONG..SWB] of string;
 
-const RNGs: TRNGarray = ('CONG','COSWB','ISAAC','BB128','BB256','BB512','MOTE8','MOTE16','MOTE32','KILFI','KISS','KISWB','LFIB4','MWC','MWSWB','SHR3','SHRSW','SWB'); 
+const RNGs: TRNGarray = ('CONG','COSWB','ISAAC','BB128','BB256','BB512','MOTE8','MOTE16','MOTE32','MOTE64','KILFI','KISS','KISWB','LFIB4','MWC','MWSWB','SHR3','SHRSW','SWB'); 
 
 var  baseRNG: TRNG = ISAAC;
 
@@ -66,7 +60,7 @@ procedure rSetBaseRNG(b:TRNG);
 
 implementation
 
-uses sysutils, myisaac, marsaglia, bb128, bb256, bb512, mote8, mote16, mote32;
+uses sysutils, myisaac, marsaglia, bb128, bb256, bb512, mote8, mote16, mote32, mote64;
 
 const 	lastRNG = cardinal(SWB);
 
@@ -104,6 +98,7 @@ begin
 		mote8.moRandom;
 		mote16.moRandom;
 		mote32.moRandom;
+		mote64.moRandom;
 	end;
 end;
 
@@ -128,6 +123,7 @@ begin
 			MOT8:   mote8.moRandom;
 			MOT16:  mote16.moRandom;
 			MOT32:  mote32.moRandom;
+			MOT64:  mote64.moRandom;
 		end;
 	end;
 end;
@@ -153,6 +149,8 @@ begin
 	mote16.moReset;
 	//Reset mote32
 	mote32.moReset;
+	//Reset mote64
+	mote64.moReset;
 end;
 
 
@@ -200,6 +198,8 @@ begin
 	mote16.moSeedW(seed,16);
 	//Seed mote32
 	mote32.moSeedW(seed,32);
+	//Seed mote64
+	mote64.moSeedW(seed,64);
 	
 end;
 
@@ -277,6 +277,8 @@ begin
 		MOT16: mote16.moSeedW(seed,16);
 		//Seed mote32
 		MOT32: mote32.moSeedW(seed,32);
+		//Seed mote64
+		MOT64: mote64.moSeedW(seed,64);
 	end;
 end;
 
@@ -301,15 +303,16 @@ end;
 function rRandom(rng:TRNG): Cardinal;
 begin
 	case rng of
-		CONG:	result := mCONG;
-		COSWB:	result := (mCONG+mSWB);
-		ISAAC:	result := iRandom;
-		B128:	result := bb128.bbRandom;
-		B256:	result := bb256.bbRandom;
-		B512:	result := bb512.bbRandom;
 		MOT8:   result := mote8.moRandom;
 		MOT16:  result := mote16.moRandom;
 		MOT32:  result := mote32.moRandom;
+		MOT64:  result := mote64.moRandom;
+		ISAAC:	result := iRandom;
+		CONG:	result := mCONG;
+		COSWB:	result := (mCONG+mSWB);
+		B128:	result := bb128.bbRandom;
+		B256:	result := bb256.bbRandom;
+		B512:	result := bb512.bbRandom;
 		KILFI:  result := (mKISS+mLFIB4);
 		KISS:	result := mKISS;
 		KISWB:	result := (mKISS+mSWB);

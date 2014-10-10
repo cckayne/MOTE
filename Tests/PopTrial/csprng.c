@@ -6,10 +6,6 @@
 #include "BB128.h"
 #include "BB256.h"
 #include "BB512.h"
-#include "mite8.h"
-#include "mite16.h"
-#include "mite32.h"
-#include "mite64.h"
 #include "mote8.h"
 #include "mote16.h"
 #include "mote32.h"
@@ -22,13 +18,10 @@ ub4 rStateSize(enum CSPRNG rng) {
 	if (rng==BB128)  return 128; else
 	if (rng==BB256)  return 256; else
 	if (rng==BB512)  return 512; else
-	if (rng==MITE8)  return   8; else
-	if (rng==MITE16) return  16; else
-	if (rng==MITE32) return  32; else
-	if (rng==MITE64) return  64; else
 	if (rng==MOTE8)  return   8; else
 	if (rng==MOTE16) return  16; else
 	if (rng==MOTE32) return  32; else
+	if (rng==MOTE64) return  64; else
 	return 0;
 }
 
@@ -39,13 +32,10 @@ void rSeed(enum CSPRNG rng, char* seed, ub4 rounds) {
 	if (rng==BB128)  bb128_SeedW(seed,rounds);
 	if (rng==BB256)  bb256_SeedW(seed,rounds);
 	if (rng==BB512)  bb512_SeedW(seed,rounds);
-	if (rng==MITE8)  mite8_SeedW(seed,rounds);
-	if (rng==MITE16) mite16_SeedW(seed,rounds);
-	if (rng==MITE32) mite32_SeedW(seed,rounds);
-	if (rng==MITE64) mite64_SeedW(seed,rounds);
 	if (rng==MOTE8)  mote8_SeedW(seed,rounds);
 	if (rng==MOTE16) mote16_SeedW(seed,rounds);
 	if (rng==MOTE32) mote32_SeedW(seed,rounds);
+	if (rng==MOTE64) mote64_SeedW(seed,rounds);
 }
 
 // Reset/initialize a given CSPRNG
@@ -54,13 +44,10 @@ void rReset(enum CSPRNG rng) {
 	if (rng==BB128) bb128_Reset();
 	if (rng==BB256) bb256_Reset();
 	if (rng==BB512) bb512_Reset();
-	if (rng==MITE8)  mite8_Reset();
-	if (rng==MITE16) mite16_Reset();
-	if (rng==MITE32) mite32_Reset();
-	if (rng==MITE64) mite64_Reset();
 	if (rng==MOTE8)  mote8_Reset();
 	if (rng==MOTE16) mote16_Reset();
 	if (rng==MOTE32) mote32_Reset();
+	if (rng==MOTE64) mote64_Reset();
 }
 
 // Initialize and seed available CSPRNGs
@@ -69,13 +56,10 @@ void rSeedAll(char* seed, ub4 rounds) {
 	bb128_SeedW(seed,rounds);
 	bb256_SeedW(seed,rounds);
 	bb512_SeedW(seed,rounds);
-	mite8_SeedW(seed,rounds);
-	mite16_SeedW(seed,rounds);
-	mite32_SeedW(seed,rounds);
-	mite64_SeedW(seed,rounds);
 	mote8_SeedW(seed,rounds);
 	mote16_SeedW(seed,rounds);
 	mote32_SeedW(seed,rounds);
+	mote64_SeedW(seed,rounds);
 }
 
 // Reset/initialize available CSPRNGs
@@ -84,13 +68,10 @@ void rResetAll(void) {
 	bb128_Reset();
 	bb256_Reset();
 	bb512_Reset();
-	mite8_Reset();
-	mite16_Reset();
-	mite32_Reset();
-	mite64_Reset();
 	mote8_Reset();
 	mote16_Reset();
 	mote32_Reset();
+	mote64_Reset();
 }
 
 // obtain a pseudo-random unsigned 32-bit quantity
@@ -99,13 +80,10 @@ ub4 rRandom(enum CSPRNG rng) {
 	if (rng==MOTE8)  return mote8_Random();  else
 	if (rng==MOTE16) return mote16_Random(); else
 	if (rng==MOTE32) return mote32_Random(); else
+	if (rng==MOTE64) return mote64_Random(); else
 	if (rng==BB512)  return bb512_Random();  else
 	if (rng==BB128)  return bb128_Random();  else
 	if (rng==BB256)  return bb256_Random();  else
 	if (rng==ISAAC)  return ISAAC_Random();  else
-	if (rng==MITE8)  return mite8_Random();  else
-	if (rng==MITE16) return mite16_Random(); else
-	if (rng==MITE32) return mite32_Random(); else
-	if (rng==MITE64) return mite64_Random(); else
 	return 0;
 }

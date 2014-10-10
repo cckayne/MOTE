@@ -1,3 +1,16 @@
+/*
+	samtrial.c demonstrates the superiority of the MOD operation over 2 alternative schemes
+	for limiting the range of PRNG output values, as in <MOD 26> [A..Z], by calculating
+	Range and Standard Deviation over a series of cumulative Monte-Carlo trials. Tabulated
+	results clearly show that on each doubling, Sigma approaches zero more quickly and in a more regular manner using the MOD operator as against the SAM or LIM functions.
+	
+	Usage  : >samtrial <from # trials> <to # trials> <rng> {<seed>}
+	Example: >samtrial 24 34 4 "my seed"
+	(perform 11 trials from 2**24 to 2**34 using MOTE64 on seed "my seed")
+	To change the function (MOD,SAM,LIM) uncomment the #define and re-compile.
+
+	This program, including the Sam() function, is copyright C.C.Kayne 2014, Public Domain.
+*/
 #include <stdio.h>
 #include <time.h>
 #include <stddef.h>
@@ -6,16 +19,16 @@
 #include "csprng.h"
 
 //#define TEST 
-//#define MOD
+#define MOD
 //#define LIM
-#define SAM
+//#define SAM
 
 #define	MODU 26
 #define	MODM1 MODU-1
 #define	MODBITS 5
 
 enum CSPRNG	rng = BB512;
-const char *RNGs[11] = { "ISAAC", "MOTE8", "MOTE16", "MOTE32", "BB128", "BB256", "BB512", "MITE8", "MITE16", "MITE32", "MITE64" };
+const char *RNGs[8] = { "ISAAC", "MOTE8", "MOTE16", "MOTE32", "MOTE64", "BB128", "BB256", "BB512" };
 
 static ub4	r,m;
 long int 	i,j;
@@ -65,7 +78,7 @@ static void putb(size_t const size, void const * const ptr, char esc)
     inferior distribution over the range of possible values
     while Sigma approaches zero more slowly than with MOD.
     tcc : SAM w/ MODBITS constant is the same speed as MOD; 
-    cl  : SAM w/ MODBITS constant is 1.1 to 1.5 x faster than MOD.
+    cl  : SAM w/ MODBITS constant is 1.5 to 2.1 x faster than MOD.
     Given a high quality RNG, SAM is otherwise unbiased. > */ 
 static ub4 Sam(enum CSPRNG ng) {
 	register ub4 m,n,b,r;
@@ -91,7 +104,9 @@ static ub4 Sam(enum CSPRNG ng) {
 /* Obtain a value in [0..val-1] from a PRNG.
    < Like other alternatives to MOD, LIM exhibits a slightly 
     inferior distribution over the range of possible values
-    while Sigma approaches zero more slowly than with MOD. */
+    while Sigma approaches zero more slowly than with MOD. 
+	Lim is a shade slower than MOD, but there's not much in it. 
+	Given a high quality RNG, Lim is otherwise unbiased. */
 static ub4 Lim(enum CSPRNG ng) {
     register ub4 dv = 0xFFFFFFFF/MODU;
     register ub4 n;
@@ -164,7 +179,7 @@ int main(int argc, char *argv[]) {
 	// check the command line
 	if (argc>=2) q1 = atoi(argv[1]);
 	if (argc>=3) q2 = atoi(argv[2]);
-	if (argc>=4) rng= atoi(argv[3]) % 11;
+	if (argc>=4) rng= atoi(argv[3]) % 8;
 	if (argc>=5) strcpy(s,argv[4]);
 	
 	#ifdef TEST

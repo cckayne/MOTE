@@ -15,6 +15,9 @@ PROGRAM ModTrial;
   Example: >modtrial 26 100000000 "my seed" 2
   All command line parameters are optional.
   Default modulus: 26.
+  
+  See also <samtrial.c>, which outputs tabulated results over cumulative trial-sets, tests
+  2 alternative functions in addition to MOD, and is considerably faster than ModTrial.
 }
 USES rng, MyStrUtils, SysUtils, Math, HRTimer;
 

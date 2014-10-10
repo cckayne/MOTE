@@ -190,7 +190,8 @@ Variance (actual) *10E4 =   0.0000000
 Chi-square              =  -1.6666667
 
 
-ModTrial is copyright (c) Conrad C. Kayne, 2014 and released into the Public Domain in the hope that it may be useful.
+ModTrial is copyright (c) Conrad C. Kayne, 2014 and released into the Public Domain in the hope that it may be useful. See also <samtrial.c>, which outputs tabulated results over cumulative trial-sets, tests 2 alternative functions in addition to MOD, and is considerably faster than ModTrial.
+
 
 cckayne@gmail.com
 https://plus.google.com/u/2/114160148833284687117

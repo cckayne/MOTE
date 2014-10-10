@@ -1,4 +1,4 @@
-Results of George Marsaglia's canonical DIEHARD suite of tests on CSPRNGs ISAAC, MOTE8, MOTE16 and MOTE32, plus Marsaglia's own PRNG KISS. ISAAC is used here as the "gold standard" of comparison and KISS as another sanity check. CONG (a linear congruential generator) is included as an example of a wanting PRNG which fails at least half of the DIEHARD battery.
+Results of George Marsaglia's canonical DIEHARD suite of tests on CSPRNGs ISAAC, MOTE8, MOTE16, MOTE32 and MOTE64, plus Marsaglia's own PRNG KISS. ISAAC is used here as the "gold standard" of comparison and KISS as another sanity check. CONG (a linear congruential generator) is included as an example of a wanting PRNG which fails at least half of the DIEHARD battery.
 
 The size of the bitstream given to DIEHARD was 2**24 32-bit words in a file of 64 MB. Doubling the bitstream length had no effect on the test results, suggesting that the program truncates it.
 
