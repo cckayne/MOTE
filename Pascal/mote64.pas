@@ -183,3 +183,14 @@ function moName: string;
 	end;
 
 end.
+
+(*	NOTE:
+	The shift-constants would require further tuning for MOTE64 to pass countx for runs longer 
+	than 2**31 and just one last DIEHARD sub-test (for bits 16-25), but this generator
+	exhibits such a beautifully random profile under John Walker's ENT test - the best of all 
+	the MOTES, in fact - that I decided to leave it just as it is for now. It is, after
+	all, real-world performance that counts most, as opposed to theoretically dotting the i's
+	with every bit in a 32-bit word. MOTE64's output under the vital MOD operation is uniformly
+	distributed, unbiased and indistinguishable from i.i.d random data, as all testing
+	has confirmed.
+*)

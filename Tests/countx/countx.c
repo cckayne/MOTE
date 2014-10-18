@@ -35,10 +35,10 @@ static u4 loglen, terms;
 //#define VERBOSE
 #define TABLE
 
-//#define MOTE8
+#define MOTE8
 //#define MOTE16
 //#define MOTE32
-#define MOTE64
+//#define MOTE64
 
 #ifdef MOTE8
 #define STSZ 8
@@ -189,11 +189,7 @@ static u4 ranval(ranctx *x) {
 			#else
 			x->state[x->c & STM1] = ~x->e;
 			#endif
-			#ifdef PLUS
-			x->b = x->c ^ ((x->e>>rsw[ri].iii) + (x->d<<rsw[ri].jjj));
-			#else
 			x->b = x->c ^ ((x->e>>rsw[ri].iii) | (x->d<<rsw[ri].jjj));
-			#endif
 			x->c = x->d - rot(x->b,rsw[ri].kkk);
 			x->d = x->state[i] + x->b;
 			x->e = x->c + x->d;

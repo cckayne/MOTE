@@ -71,3 +71,4 @@ https://sourceforge.net/projects/mote-csprng-stream-cipher/
 https://code.google.com/p/mote-csprng-stream-cipher/
 https://code.google.com/p/bedbug-csprng-stream-cipher/
 https://sourceforge.net/projects/bedbug-csprng-stream-cipher/
+https://github.com/cckayne/AUM

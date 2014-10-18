@@ -2,12 +2,13 @@
 	samtrial.c demonstrates the superiority of the MOD operation over 2 alternative schemes
 	for limiting the range of PRNG output values, as in <MOD 26> [A..Z], by calculating
 	Range and Standard Deviation over a series of cumulative Monte-Carlo trials. Tabulated
-	results clearly show that on each doubling, Sigma approaches zero more quickly and in a more regular manner using the MOD operator as against the SAM or LIM functions.
+	results clearly show that on each doubling, Sigma approaches zero more quickly and 
+	in a more regular manner using the MOD operator as against the SAM or LIM functions.
 	
 	Usage  : >samtrial <from # trials> <to # trials> <rng> {<seed>}
 	Example: >samtrial 24 34 4 "my seed"
 	(perform 11 trials from 2**24 to 2**34 using MOTE64 on seed "my seed")
-	To change the function (MOD,SAM,LIM) uncomment the #define and re-compile.
+	To change the function (MOD,SAM,LIM) uncomment its #define and re-compile.
 
 	This program, including the Sam() function, is copyright C.C.Kayne 2014, Public Domain.
 */
@@ -163,6 +164,13 @@ static double Sigma(ub4 minx,ub4 maxs) {
 }
 
 
+static void usage(void) {
+	puts("Usage  : >samtrial <from # trials> <to # trials> <rng> {<seed>}");
+	puts("Example: >samtrial 24 34 4 \"my seed\"");
+	puts("(perform 11 trials from 2**24 to 2**34 using MOTE64 on seed \"my seed\")");
+	puts("To change the function (MOD,SAM,LIM) uncomment its #define and re-compile.");
+}
+
 
 int main(int argc, char *argv[]) {
 	ub4 tots=0;
@@ -177,6 +185,7 @@ int main(int argc, char *argv[]) {
 	// rounds
 	qi = pow(2,q1);
 	// check the command line
+	if (argc<=1) { usage(); exit(0); }
 	if (argc>=2) q1 = atoi(argv[1]);
 	if (argc>=3) q2 = atoi(argv[2]);
 	if (argc>=4) rng= atoi(argv[3]) % 8;
